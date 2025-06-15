@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  .failed-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    }
+
+  .failed-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
+
+  .failed-box h2 {
+    color: #28a745;
+    font-size: 37px;
+    margin-bottom: 10px;
+  }
+
+  .spinner {
+    margin: 20px auto;
+    width: 50px;
+    height: 50px;
+    border: 6px solid #ccc;
+    border-top: 6px solid #28a745;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+</style>
+
+<div class="failed-container">
+  <div class="failed-box">
+    <h2>❌ Sorry!</h2>
+    <p> User with the information already exist.</p>
+    <div class="spinner"></div>
+    <p>Please confirm if your information is correct...</p>
+  </div>
+</div>
+
+<script>
+  setTimeout(function() {
+    window.location.href = "{{ url_for('careers') }}";
+  }, 4000); // 3 seconds
+</script>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+
+<h2 class="apply-title">Apply for{{ app_type|capitalize }}</h2>
+<div
+  class="other-app-links">
+  
+  <p> Useful links:</p>
+  <ul>
+    {% for other_type in ['job', 'attachment', 'internship'] %}
+    {% if other_type != app_type %}
+    <li><a href=" href={{ url_for('apply', type=other_type) }}">{{ other_type|capitalize }}</a></li>
+    {% endif %}
+    {% endfor %}
+
+  </ul>
+</div>
+<style>
+
+
+   .other-app-links {
+      /* margin-top: 20px; */
+      /* padding: 50px; */
+      background-color: transparent;
+      border-radius: 15px;
+      
+      font-size: 1rem;
+    }
+    .other-app-links ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+      
+      
+    }
+/* other css */
+    .other-app-links a {
+      text-decoration: none;
+      color: #0a0b0c;
+      font-weight: bold;
+      font-size: 2rem;
+      
+    }
+    .other-app-links a:hover {
+      text-decoration: underline;
+    }
+  body{
+    background: url("{{ url_for('static', filename='images/banner-01.jpg') }}")no-repeat center center fixed;
+    background-size: cover;
+  }
+  .apply-title {
+    text-align: center;
+    color: green;
+    font-size: 4rem;
+    margin-top: -2px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  }
+</style>
+
+<form method="POST" action="{{ url_for('apply', type=app_type) }}">
+  <input type="text" name="full_name" placeholder="Full Name" required><br>
+  <input type="email" name="email" placeholder="Email" required><br>
+  <input type="text" name="phone" placeholder="Phone Number">
+
+  {% if app_type == 'job' %}
+    <label for="job_type">Job Type:</label><br>
+    <select name="job_type" required>
+      <option value="">-- Select Job Type --</option>
+      <option value="plumbing">Fabricator</option>
+      <option value="mason">Mason</option>
+      <option value="engineer">Site Engineer</option>
+    </select><br>
+  {% endif %}
+
+  <button type="submit">Submit</button>
+</form>
+
+{% if app_type == 'job' %}
+  <p>Slots left: {{ 10 - job_slots }}</p>
+{% else %}
+  <p>Slots left: {{ 10 - general_slots }}</p>
+{% endif %}
+
+{% endblock %}
