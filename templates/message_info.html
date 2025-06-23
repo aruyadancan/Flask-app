@@ -44,7 +44,7 @@
 <div class="thank-you-container">
   <div class="thank-you-box">
     <h2>✅ Thank you!</h2>
-    <p>Your application has been received.</p>
+    <p>Your message has been sent!.</p>
     <div class="spinner"></div>
     <p>You will be redirected to the homepage shortly...</p>
   </div>
@@ -53,6 +53,6 @@
 <script>
   setTimeout(function() {
     window.location.href = "{{ url_for('index') }}";
-  }, 4000); // 4 seconds
+  }, 4000); // 1 seconds
 </script>
 {% endblock %}

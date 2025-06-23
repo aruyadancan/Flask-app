@@ -1,137 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Mlink-home page{% endblock %}
+{% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-
-  <!-- Home page content here -->
-
-
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-
-  <title>M.link Company</title>
-
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="{{ url_for('static' ,filename='vendor/bootstrap/css/bootstrap.min.css') }}">
-
-  <!-- Additional CSS Files -->
-  <link rel="stylesheet" href="{{ url_for('static' ,filename='css/fontawesome.css' ) }}">
-  <link rel="stylesheet" href="{{ url_for('static' ,filename='css/templatemo-villa-agency.css' ) }}">
-  <link rel="stylesheet" href="{{ url_for('static' ,filename='css/owl.css' ) }}">
-  <link rel="stylesheet" href="{{ url_for('static' ,filename='css/animate.css' ) }}">
-  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
-  <!--
-
-TemplateMo 591 villa agency
-
-https://templatemo.com/tm-591-villa-agency
-
--->
-</head>
-
-
-<body>
-
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-
-  <div class="sub-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-8">
-          <ul class="info">
-            <li><a href="mailto:danmajor787@gmail.com" target="_blank"><i class="fa fa-envelope"></i> danmajor787@gmail.com</a></li>
-            <li><i class="fa fa-map"></i> PO BOX 6767-80100 MOMBASA</li>
-
-
-          </ul>
-        </div>
-        <div class="col-lg-4 col-md-4">
-          <ul class="social-links">
-
-            <li><a href="https://facebook.com/profile.php?id=100083622246255" target="_blank"><i class="fab fa-facebook"></i></a></li>
-            <li><a href="https://x.com/DanMajor001?t=LXRVQ1|7Lat0Qcr8RTyWLQ&s=09" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://linkedin.com/in/dancan-aruya-nyaata-b3982a198?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/aruya01/tagged/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="https://wa.me/+254741274975" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <nav class="main-nav">
-            <!-- ***** Logo Start ***** -->
-            <a href="{{ url_for('index') }}" class="logo"> <h1>M.LINK</h1></a>
-             
-             
-            <!-- ***** Logo End ***** -->
-            <!-- ***** Menu Start ***** -->
-
-            <!DOCTYPE html>
-            <html lang="en">
-
-            <head>
-              <meta charset="UTF-8">
-              <title>Clickable Dropdown Menu</title>
-              <style>
-
-              </style>
-            </head>
-
-            <body>
-
-
-
-
-              <!-- ***** Menu Start ***** -->
-              <ul class="nav">
-                <!-- <li><a href="index.html" class="active">HOME</a></li>
-                <li><a href="properties.html">PROPERTIES</a></li>
-                <li><a href="services.html">services</a></li>
-                <li><a href="contact.html">CONTACT US</a></li>
-                <li><a href="careers.html">careers</a></li> -->
-                <li><a href="{{ url_for('index')}}">Home</a></li>
-                <li><a href="{{ url_for('contact')}}">Contact</a></li>
-                <li><a href="{{ url_for('services')}}">Services</a></li>
-                <li><a href="{{ url_for('properties')}}">Properties</a></li>
-                <li><a href="{{ url_for('careers')}}">careers</a></li>
-
-              
-              
-              
-              
-              
-
-
-                <a class='menu-trigger'>
-                  <span>Menu</span>
-                </a>
-                <!-- ***** Menu End ***** -->
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
 
   <div class="main-banner">
     <div class="owl-carousel owl-banner">
@@ -164,7 +34,8 @@ https://templatemo.com/tm-591-villa-agency
 
             <img src="{{ url_for('static' ,filename='images/featured.jpg' ) }}" alt="featured">
             <a href="property-details.html">
-              <img src="{{ url_for('static' ,filename='images/featured-icon.png' ) }}"alt="featured-icon" style="max-width: 60px; padding: 0px;"></a>
+              <img src="{{ url_for('static' ,filename='images/featured-icon.png' ) }}" alt="featured-icon"
+                style="max-width: 60px; padding: 0px;"></a>
           </div>
         </div>
         <div class="col-lg-5">
@@ -198,8 +69,8 @@ https://templatemo.com/tm-591-villa-agency
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  We are <strong>general Contactors </strong> dealing in all Building and Civil works and
-                  offering<code> Consulting</code> services.
+                  We are <strong>general Contactors </strong> dealing in all Building & Civil works,
+                  offering the best<code> Consulting</code> services.
                 </div>
               </div>
             </div>
@@ -224,12 +95,13 @@ https://templatemo.com/tm-591-villa-agency
           <div class="info-table">
             <ul>
               <li>
-                <img src="{{ url_for('static' ,filename='images/info-icon-01.png' ) }}" alt="info-icon-01" style="max-width: 52px;">
+                <img src="{{ url_for('static' ,filename='images/info-icon-01.png' ) }}" alt="info-icon-01"
+                  style="max-width: 52px;">
                 <h4>256<br><span>projects done</span></h4>
               </li>
               <li>
-                <img src="{{ url_for('static' ,filename='images/info-icon-02.png' ) }}"alt="info-icon-02"
-                style="max-width: 52px;">                
+                <img src="{{ url_for('static' ,filename='images/info-icon-02.png' ) }}" alt="info-icon-02"
+                  style="max-width: 52px;">
                 <h4>Contract<br><span>Contract Ready</span></h4>
               </li>
               <li>
@@ -296,7 +168,7 @@ https://templatemo.com/tm-591-villa-agency
               <div class="col-lg-4">
                 <div class="counter">
                   <h2 class="timer count-title count-number" data-to="24" data-speed="1000"></h2>
-                  <p class="count-text ">Awwards<br>Won 2023</p>
+                  <p class="count-text ">Ongoing<br>projects</p>
                 </div>
               </div>
             </div>
@@ -415,9 +287,9 @@ https://templatemo.com/tm-591-villa-agency
                         labore et dolore magna aliqua quised ipsum suspendisse. <br><br>Swag fanny pack lyft blog twee.
                         JOMO ethical copper mug, succulents typewriter shaman DIY kitsch twee taiyaki fixie hella venmo
                         after messenger poutine next level humblebrag swag franzen.</p>
-                      <div class="icon-button"> 
+                      <div class="icon-button">
                         <a href="contact.html"><i class="active"></i> Contact a Quotation</a>
-                        
+
                       </div>
                     </div>
                   </div>
@@ -443,7 +315,8 @@ https://templatemo.com/tm-591-villa-agency
       <div class="row">
         <div class="col-lg-4 col-md-6">
           <div class="item">
-            <a href="property-details.html"><img src="{{ url_for('static' ,filename='images/property-02.jpg' ) }}" alt=""></a>
+            <a href="property-details.html"><img src="{{ url_for('static' ,filename='images/property-02.jpg' ) }}"
+                alt=""></a>
             <span class="category">Luxury Villa</span>
             <h6>$2.264.000</h6>
             <h4><a href="property-details.html">MOMBASA KENYA</a></h4>
@@ -461,7 +334,8 @@ https://templatemo.com/tm-591-villa-agency
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="item">
-            <a href="property-details.html"><img src="{{ url_for('static' ,filename='images/property-03.jpg' ) }}" alt=""></a>
+            <a href="property-details.html"><img src="{{ url_for('static' ,filename='images/property-03.jpg' ) }}"
+                alt=""></a>
             <span class="category">Luxury Villa</span>
             <h6>$1.180.000</h6>
             <h4><a href="property-details.html">WATAMU , KILIFI</a></h4>
@@ -479,7 +353,8 @@ https://templatemo.com/tm-591-villa-agency
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="item">
-            <a href="property-details.html"><img src="{{ url_for('static' ,filename='images/property-03.jpg' ) }}" alt=""></a>
+            <a href="property-details.html"><img src="{{ url_for('static' ,filename='images/property-03.jpg' ) }}"
+                alt=""></a>
             <span class="category">Luxury Villa</span>
             <h6>$1.460.000</h6>
             <h4><a href="property-details.html">DIANI</a></h4>
@@ -497,7 +372,8 @@ https://templatemo.com/tm-591-villa-agency
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="item">
-            <a href="property-details.html"><img src="{{ url_for('static' ,filename='images/property-04.jpg' ) }}" alt=""></a>
+            <a href="property-details.html"><img src="{{ url_for('static' ,filename='images/property-04.jpg' ) }}"
+                alt=""></a>
             <span class="category">Apartment</span>
             <h6>$584.500</h6>
             <h4><a href="property-details.html">NYALI</a></h4>
@@ -515,7 +391,8 @@ https://templatemo.com/tm-591-villa-agency
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="item">
-            <a href="property-details.html"><img src="{{ url_for('static' ,filename='images/property-05.jpg' ) }}" alt=""></a>
+            <a href="property-details.html"><img src="{{ url_for('static' ,filename='images/property-05.jpg' ) }}"
+                alt=""></a>
             <span class="category">Penthouse</span>
             <h6>$925.600</h6>
             <h4><a href="property-details.html">MALINDI</a></h4>
@@ -533,7 +410,8 @@ https://templatemo.com/tm-591-villa-agency
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="item">
-            <a href="property-details.html"><img src="{{ url_for('static' ,filename='images/property-06.jpg' ) }}" alt="properties"></a>
+            <a href="property-details.html"><img src="{{ url_for('static' ,filename='images/property-06.jpg' ) }}"
+                alt="properties"></a>
             <span class="category">Modern Condo</span>
             <h6>$450.000</h6>
             <h4><a href="property-details.html">ATAMU</a></h4>
@@ -577,83 +455,59 @@ https://templatemo.com/tm-591-villa-agency
               style="border:0; border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);"
               allowfullscreen=""></iframe>
           </div>
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="item phone">
-                <img src="{{ url_for('static' ,filename='images/phone-icon.png' ) }}" alt="phone" style="max-width: 25px;">
-                <h6>+254741274975<br><span>Phone Number</span></h6>
+
+          
+          <div class="contact-methods">
+            <div class="contact-card">
+              <div class="contact-icon">
+                <img src="{{ url_for('static' ,filename='images/phone-icon.png' ) }}" alt="phone"
+                  style="max-width: 25px;">
+               
+                 <div class="contact-details">
+                  <h6>Phone</h6>
+                 <p>0741274975</p>
+                 <span>Available Mon-Fri, 8am-5pm</span>
+                 </div>
               </div>
             </div>
-            <div class="col-lg-6">
-              <div class="item email">
-                <img src="{{ url_for('static' ,filename='images/email-icon.png' ) }}" alt="email" style="max-width: 25px;">
-                <h6>danmajor787@gmail.com<br><span>Email</span></h6>
+            <div class="contact-card">
+              <div class="item phone">
+                <img src="{{ url_for('static' ,filename='images/email-icon.png' ) }}" alt="email"
+                  style="max-width: 25px;">
+                <div class="contact-details">
+                  <h6>Email</h6>
+                  <p>danmajor787@gmail.com</p>
+                  <span>Typically respond within 24 hours</span>
+
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-5">
-          <form id="contact-form" action="" method="post">
-            <div class="row">
-              <div class="col-lg-12">
-                <fieldset>
-                  <label for="name">Full Name</label>
-                  <input type="name" name="name" id="name" placeholder="Your Name..." autocomplete="on" required>
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <label for="email">Email Address</label>
-                  <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..."
-                    required="">
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <label for="subject">Subject</label>
-                  <input type="subject" name="subject" id="subject" placeholder="Subject..." autocomplete="on">
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <label for="message">Message</label>
-                  <textarea name="message" id="message" placeholder="Your Message"></textarea>
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <button type="submit" id="form-submit" class="orange-button">Send Message</button>
-                </fieldset>
-              </div>
-            </div>
-          </form>
-        </div>
+        </div>     
+      <div class="contact-form-container">
+        <form id="contact-form" method="post">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What's this about?">
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your message here..." rows="5" required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
       </div>
     </div>
-  </div>
-
-  <footer>
-    <div class="container">
-      <div class="col-lg-8">
-        <p>Copyright © 2025 M.Link Co | All rights reserved.
-
-          Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">ARUYA is MAJOR</a></p>
-      </div>
-    </div>
-    
-  </footer>
-
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-  <!-- Bootstrap core JavaScript - CORRECTED -->
-  <script src="{{ url_for('static' ,filename='vendor/jquery/jquery.min.js' ) }}"></script>
-  <script src="{{ url_for('static' ,filename='vendor/bootstrap/js/bootstrap.min.js' ) }}"></script>
-  <script src="{{ url_for('static' ,filename='js/isotope.min.js' ) }}"></script>
-  <script src="{{ url_for('static' ,filename='js/owl-carousel.js' ) }}"></script>
-  <script src="{{ url_for('static' ,filename='js/counter.js' ) }}"></script>
-  <script src="{{ url_for('static' ,filename='js/custom.js' ) }}"></script>
-
-</body>
-
-</html>
-
+{% endblock %}

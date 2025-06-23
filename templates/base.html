@@ -1,38 +1,20 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-   <!-- jinja -->
-
-  
-  {% with messages = get_flashed_messages() %}
-    {% if messages %}
-      <ul class="flash-messages">
-        {% for message in messages %}
-          <li>{{ message }}</li>
-        {% endfor %}
-      </ul>
-    {% endif %}
-  {% endwith %}
-
- 
 
 
-  <!-- end of jinja -->
 
-  <title>{% block title %} Application {% endblock %}</title>
 
-  <head>
-
- 
   <meta charset="utf-8">
+  <title>{% block title %}{% endblock %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
-  <title>CAREER</title>
-  <!-- Bootstrap core CSS -->
+
   <link rel="stylesheet" href="{{ url_for('static' ,filename='vendor/bootstrap/css/bootstrap.min.css') }}">
 
   <!-- Additional CSS Files -->
@@ -41,11 +23,15 @@
   <link rel="stylesheet" href="{{ url_for('static' ,filename='css/owl.css' ) }}">
   <link rel="stylesheet" href="{{ url_for('static' ,filename='css/animate.css' ) }}">
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+  <body style="background-color: black;">
+  
 
 </head>
 
+<!--TemplateMo 591 villa agency https://templatemo.com/tm-591-villa-agency-->
+
 <body>
- 
+
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
@@ -64,16 +50,24 @@
       <div class="row">
         <div class="col-lg-8 col-md-8">
           <ul class="info">
-            <li><i class="fa fa-envelope"></i> info@danmajor.com</li>
-            <li><i class="fa fa-map"></i> MOMBASA</li>
+            <li><a href="mailto:danmajor787@gmail.com" target="_blank"><i class="fa fa-envelope"></i>
+                danmajor787@gmail.com</a></li>
+            <li><i class="fa fa-map"></i> PO BOX 6767-80100 MOMBASA</li>
+
           </ul>
         </div>
         <div class="col-lg-4 col-md-4">
           <ul class="social-links">
-            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-            <li><a href="https://x.com/minthu" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://facebook.com/profile.php?id=100083622246255" target="_blank"><i
+                  class="fab fa-facebook"></i></a></li>
+            <li><a href="https://x.com/DanMajor001?t=LXRVQ1|7Lat0Qcr8RTyWLQ&s=09" target="_blank"><i
+                  class="fab fa-twitter"></i></a></li>
+            <li><a
+                href="https://linkedin.com/in/dancan-aruya-nyaata-b3982a198?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/aruya01/tagged/?hl=en" target="_blank"><i
+                  class="fab fa-instagram"></i></a></li>
+            <li><a href="https://wa.me/+254741274975" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
           </ul>
         </div>
       </div>
@@ -87,9 +81,10 @@
         <div class="col-12">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
-            <a href="index.html" class="logo">
+            <a href="{{ url_for('index') }}" class="logo">
               <h1>M.LINK</h1>
             </a>
+
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
@@ -97,50 +92,48 @@
               <li><a href="{{ url_for('contact')}}">Contact</a></li>
               <li><a href="{{ url_for('services')}}">Services</a></li>
               <li><a href="{{ url_for('properties')}}">Properties</a></li>
-              <li><a href="{{ url_for('careers')}}">careers</a></li>
+              <li><a href="{{ url_for('careers')}}">Careers</a></li>
             </ul>
-            <a class='menu-trigger'>
-              <span>Menu</span>
-            </a>
+            <a class='menu-trigger'><span>Menu</span></a>
             <!-- ***** Menu End ***** -->
           </nav>
         </div>
       </div>
     </div>
+  </header>
+  <!-- header end here -->
 
-  
+  <main>{% block content %}
+
+    <!-- message submission handling -->
+
+    
+    <form method="POST" action="{{ url_for('contact')}}">
+      <input type=" text" name="full_name" placeholder="Full Name" required><br>
+      <input type=" text" name="email_address" placeholder="Email Address" required><br>
+      <input type=" text" name="subject" placeholder="Subject" required><br>
+      <textarea name="message" placeholder="Message" required></textarea><br>
+      <button type="submit">Send</button>
+    </form>
+    <!-- message submission handling -->
 
 
-
-  <main>
-    {% block content %}{% endblock %}
-   
-
-
+    {% endblock %}
   </main>
 
   <!-- Shared Footer -->
-  <footer>
 
-    <div class="container">
-      <div class="col-lg-8">
-        <p>Copyright © 2025 M.Link Co. | All rights
+  {% include "footer.html" %}
 
-          Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">ARUYA is MAJOR</a></p>
-      </div>
-    </div>
-
-    &copy; 2023 Your Company
-  </footer>
 
   <!-- Shared JavaScript -->
+
   <script src="{{ url_for('static' ,filename='vendor/jquery/jquery.min.js' ) }}"></script>
   <script src="{{ url_for('static' ,filename='vendor/bootstrap/js/bootstrap.min.js' ) }}"></script>
   <script src="{{ url_for('static' ,filename='js/isotope.min.js' ) }}"></script>
   <script src="{{ url_for('static' ,filename='js/owl-carousel.js' ) }}"></script>
   <script src="{{ url_for('static' ,filename='js/counter.js' ) }}"></script>
   <script src="{{ url_for('static' ,filename='js/custom.js' ) }}"></script>
-  {% block extra_js %}{% endblock %}
 </body>
 
 </html>

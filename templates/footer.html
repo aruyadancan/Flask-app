@@ -1,0 +1,71 @@
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- Quick Links Section -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('services') }}">Services</a></li>
+                <li><a href="{{ url_for('properties') }}">Properties</a></li>
+                <li><a href="{{ url_for('careers') }}">Careers</a></li>
+            </ul>
+        </div>
+
+        <!-- Legal Section -->
+        <div class="footer-section">
+            <h3>Legal</h3>
+            <ul class="footer-links">
+
+                <li><a href="{{ url_for('privacy_policy')}}">Privacy Policy</a></li>
+                <li><a href="{{ url_for('terms_of_service')}}">Terms of Services</a></li>
+                <li><a href="{{ url_for('disclaimer')}}">Disclaimer</a></li>
+                <li><a href="{{ url_for('about_us')}}">About Us</a></li>
+                <li><a href="{{ url_for('sitemap')}}">Site Map</a></li>
+
+            </ul>
+        </div>
+
+        <!-- Contact & Social Section -->
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <div class="contact-info">
+                <p><i class="fas fa-phone"></i> +254 741 274 975</p>
+            </div>
+
+            <h3 class="social-title">Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://facebook.com/profile.php?id=100083622246255" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://instagram.com/aruya01/tagged/?hl=en" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com//DanMajor001?t=LXRVQ1|7Lat0Qcr8RTyWLQ&s=09" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://linkedin.com/in/dancan-aruya-nyaata-b3982a198?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://wa.me/+254741274975" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <p>&copy; <span id="year"></span> Mlink company | All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+
+<style>
+    /* Footer Styles */
+</style>

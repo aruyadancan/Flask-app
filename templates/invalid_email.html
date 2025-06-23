@@ -1,28 +1,27 @@
 {% extends "base.html" %}
-{% block title %}Thank you{% endblock %}
+{% block title %} Email not sent{% endblock %}
 {% block content %}
 <style>
-  .thank-you-container {
+  .failed-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 80vh;
     background-size: cover;
     background-position: center;
-    background-color: #d5dbd7;
     }
 
-  .thank-you-box {
-    background: rgba(133, 125, 125, 0.95);
+  .failed-box {
+    background: rgba(255, 255, 255, 0.95);
     padding: 40px;
     border-radius: 16px;
     text-align: center;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
 
-  .thank-you-box h2 {
-    color: #147c2d;
-    font-size: 32px;
+  .failed-box h2 {
+    color: #28a745;
+    font-size: 37px;
     margin-bottom: 10px;
   }
 
@@ -41,18 +40,18 @@
   }
 </style>
 
-<div class="thank-you-container">
-  <div class="thank-you-box">
-    <h2>✅ Thank you!</h2>
-    <p>Your application has been received.</p>
+<div class="failed-container">
+  <div class="failed-box">
+    <h2>❌ Sorry!</h2>
+    <p> Email not sent! .</p>
     <div class="spinner"></div>
-    <p>You will be redirected to the homepage shortly...</p>
+    <p>Please confirm if your information is correct...</p>
   </div>
 </div>
 
 <script>
   setTimeout(function() {
-    window.location.href = "{{ url_for('index') }}";
-  }, 4000); // 4 seconds
+    window.location.href = "{{ url_for('contact') }}";
+  }, 4000); // 3 seconds
 </script>
 {% endblock %}

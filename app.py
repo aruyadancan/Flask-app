@@ -1,9 +1,21 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
+from flask_mail import Mail, Message
 import os
 import csv
 
 app = Flask(__name__)
 app.secret_key = 'my_secret_key_123'  # Needed for flashing messages
+
+# ===mail configuaration ===
+
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'danmajor787@gmail.com'  # your Gmail
+app.config['MAIL_PASSWORD'] = 'dkmfxalvhktzlwjw'     # App Password
+app.config['MAIL_DEFAULT_SENDER'] = 'danmajor787@gmail.com'
+
+mail = Mail(app)
 
 # In-memory counters
 slot_limits = {
@@ -14,17 +26,84 @@ slot_limits = {
 
 MAX_SLOTS = 10
 
-@app.route('/')
+@app.route('/', methods=["GET", "POST"])
 def index():
+    
+    if request.method == 'POST':
+        full_name = request.form.get('full_name')
+        email_address = request.form.get('email_address')
+        subject = request.form.get('subject')
+        message = request.form.get('message')
+        msg = Message(subject=f"Contact Form:{subject}", sender=email_address,
+                     recipients=["danmajor787@gmail.com"], body=f"From: {full_name}<{email_address}>\n\n{message}" )
+        try:
+            mail.send(msg)
+            return render_template('message_info.html')
+        except Exception as e:
+            print(f"Email sending failed:", e)
+            return render_template('invalid_email.html')    
+
+        
+        #return redirect(url_for('index'))
     return render_template("index.html")
+
+@app.route('/about_us')
+def about_us():
+    return render_template("about_us.html")
+
+@app.route('/terms_of_service')
+def terms_of_service():
+    return render_template("terms_of_service.html")
+
+@app.route('/disclaimer')
+def disclaimer():
+    return render_template("disclaimer.html")
+
+@app.route('/privacy_policy')
+def privacy_policy():
+    return render_template("privacy_policy.html")
+
+@app.route('/sitemap')
+def sitemap():
+    return render_template("sitemap.html")
+
+@app.route('/invalid_email')
+def invalid_email():
+    return render_template("invalid_email.html")
 
 @app.route('/careers')
 def careers():
     return render_template("careers.html")
+@app.route('/message_info')
+def message_info():
+    return render_template("message_info.html")
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
+    if request.method == 'POST':
+        full_name = request.form.get('full_name')
+        email_address = request.form.get('email_address')
+        subject = request.form.get('subject')
+        message = request.form.get('message')
+
+        try:
+            msg = Message(subject=f"Contact Form:{subject}", 
+                          
+                          sender=email_address,
+                          recipients=["danmajor787@gmail.com"], 
+                          body=f"From: {full_name}<{email_address}>\n\n{message}" )
+           
+            mail.send(msg)
+            return render_template('message_info.html')
+        except Exception as e:
+            print(f"Email sending failed:", e)
+            return ('not sent') #render_template('invalid_email.html')
+        
+        #return redirect(url_for('contact'))
+    
     return render_template("contact.html")
+
+
 
 @app.route('/services')
 def services():
